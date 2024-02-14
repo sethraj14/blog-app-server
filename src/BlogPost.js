@@ -16,6 +16,13 @@ const BlogPost = sequelize.define('BlogPost', {
             notEmpty: { msg: 'Content must not be empty' },
         },
     },
+    author: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+            notEmpty: { msg: 'Author must not be empty' },
+        },
+    }
 }, {
     timestamps: true, // Adds createdAt and updatedAt timestamps
 });

@@ -5,6 +5,7 @@ type BlogPost {
     id: ID!
     title: String!
     content: String!
+    author: String!
     createdAt: String
     updatedAt: String
 }
@@ -15,7 +16,7 @@ type Query {
 }
 
 type Mutation {
-    createBlogPost(title: String!, content: String!): BlogPost
+    createBlogPost(title: String!, content: String!, author: String!): BlogPost
 }
 `;
 

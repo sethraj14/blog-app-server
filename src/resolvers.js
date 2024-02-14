@@ -20,9 +20,9 @@ const resolvers = {
         }
     },
     Mutation: {
-        async createBlogPost(_, { title, content }) {
+        async createBlogPost(_, { title, content, author }) {
             try {
-                const newPost = await BlogPost.create({ title, content });
+                const newPost = await BlogPost.create({ title, content, author });
                 redis.set(`blogPost:${newPost.id}`, JSON.stringify(newPost), 'EX', 3600);
                 return newPost;
             } catch (error) {
