@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "build": "echo 'No build required'"
   },
   "dependencies": {
     "@graphql-tools/schema": "^10.0.2",
