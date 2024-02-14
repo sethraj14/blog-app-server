@@ -20,5 +20,4 @@ jobs:
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        run: /usr/local/bin/npx vercel  -t ${{ secrets.VERCEL_TOKEN }} -m githubCommitSha=$GITHUB_SHA -m githubCommitAuthorName=$GITHUB_ACTOR -m githubCommitAuthorLogin=$GITHUB_ACTOR -m githubDeployment=1 -m githubOrg=$GITHUB_REPOSITORY_OWNER -m githubRepo=$GITHUB_REPOSITORY -m githubCommitOrg=$GITHUB_REPOSITORY_OWNER -m githubCommitRepo=$GITHUB_REPOSITORY -m githubCommitMessage="$GITHUB_EVENT_NAME" -m githubCommitRef=$GITHUB_REF
